@@ -1,0 +1,45 @@
+* {
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  font-size: 32px;
+  color: #333;
+
+  .header {
+    height: 48px;
+    background-color: rgb(225, 201, 205);
+    &:extend(.center);
+  }
+
+  .content {
+    display: flex;
+    flex: 1;
+
+    .menu {
+      &:extend(.center);
+      width: 240px;
+      background-color: rgb(251, 230, 214);
+    }
+
+    .page-container {
+      flex: 1;
+      height: 100%;
+      overflow: auto;
+    }
+  }
+}
