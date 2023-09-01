@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "A Webpack5 Module Federation Demo",
   "scripts": {
-    "install-all": "npm-run-all --parallel app:install remote:install",
-    "remote:install": "cd ./demo/remote && npm install",
+    "install-all": "npm-run-all --parallel app:install layout:install",
+    "layout:install": "cd ./demo/layout && npm install",
     "app:install": "cd ./demo/app && npm install",
     "app:start": "cd ./demo/app && npm run dev-remote",
-    "remote:start": "cd ./demo/remote && npm run remote",
-    "start-all": "concurrently \"npm run remote:start\" \"npm run app:start\"",
+    "layout:start": "cd ./demo/layout && npm run remote",
+    "start-all": "concurrently \"npm run layout:start\" \"npm run app:start\"",
     "bootstrap": "npm install && npm run install-all && npm run start-all"
   },
   "keywords": [],

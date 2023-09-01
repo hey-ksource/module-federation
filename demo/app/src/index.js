@@ -10,6 +10,7 @@ ReactDOM.render(
     <div className="text">
       This Is App.
     </div>
-  </Layout>,
+  </Layout>
+  ,
   root,
 );

@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const baseConfig = require('./wp.common.js');
 
 module.exports = {
@@ -14,5 +15,6 @@ module.exports = {
   },
   plugins: [
     ...baseConfig.plugins,
+    new webpack.HotModuleReplacementPlugin(), // 热更新插件
   ],
 };

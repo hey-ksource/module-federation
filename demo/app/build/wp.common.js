@@ -13,7 +13,9 @@ module.exports = {
   },
   output: {
     publicPath: '/',
+    path: resolvePath('dist'),
     filename: '[name].[contenthash:8].js',
+    chunkFilename: '[name].[contenthash:8].js',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -43,8 +45,15 @@ module.exports = {
       },
     ],
   },
-
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser.js',
+    }),
     new HtmlWebpackPlugin({
       template: resolvePath('public/index.html'),
     }),
@@ -59,12 +68,12 @@ module.exports = {
         react: {
           singleton: true,
         },
-        'react-dom': {
-          singleton: true,
-        },
-        'react-router-dom': {
-          singleton: true,
-        },
+        // 'react-dom': {
+        //   singleton: true,
+        // },
+        // 'react-router-dom': {
+        //   singleton: true,
+        // },
         // antd: {
         //   singleton: true,
         // },

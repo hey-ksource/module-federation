@@ -12,9 +12,6 @@ module.exports = {
       path: require.resolve('path/'),
     },
   },
-  output: {
-    filename: 'layout.[name].js',
-  },
   module: {
     rules: [
       {
